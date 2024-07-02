@@ -1,27 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minha Página com Painel Deslizante</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Arquivo CSS para estilização -->
+    <title>Popout Side Panel with HTML & CSS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Minha Página com Painel Deslizante</h1>
-        </header>
-        <main>
-            <p>Aqui vai o conteúdo principal da sua página.</p>
-        </main>
-        <aside class="sidebar">
-            <!-- Conteúdo do painel deslizante -->
-            <ul>
-                <li><a href="#camadas">Camadas</a></li>
-                <li><a href="#dashboard">Dashboard</a></li>
-                <li><a href="#informacoes">Informações</a></li>
-            </ul>
-        </aside>
+    <div class="wrapper side-panel-open">
+        <div class="main">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque, sint voluptate consequuntur, eligendi omnis magnam nam corrupti repudiandae quia ex mollitia debitis adipisci saepe sequi iste natus numquam. Est, deleniti?
+
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis consequatur dolorem impedit doloribus cum commodi sint, itaque quis inventore maxime voluptatibus alias pariatur unde eos, nihil numquam hic labore sit?
+
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis et nisi cumque, a ratione sit libero deleniti neque iusto quibusdam, ipsum voluptates at aperiam? Totam accusantium fuga fugiat rerum exercitationem!
+
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur ab facere, pariatur voluptatibus sapiente expedita facilis adipisci ipsa rem similique! Dolorum aliquam corporis harum accusantium quos placeat reiciendis enim assumenda.
+        </div>
+        <button class="side-panel-toggle" type="button">
+            <span class="material-symbols-outlined open">keyboard_double_arrow_left</span>
+            <span class="material-symbols-outlined close">keyboard_double_arrow_right</span>
+        </button>
+        <div class="side-panel">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam vel ullam alias. Delectus minus quisquam, nemo pariatur maxime omnis at alias voluptatibus hic natus! Impedit eveniet rerum totam at labore.
+
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam, repudiandae ullam quos saepe repellendus sunt atque quis repellat ratione numquam praesentium quod incidunt dolorum voluptas maxime dolores, non totam odio.
+        </div>
     </div>
+    <script src="scripts.js"></script>
 </body>
 </html>

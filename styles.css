@@ -1,52 +1,63 @@
-body, html {
+body {
     margin: 0;
-    padding: 0;
-    height: 100%;
+    font-family: sans-serif;
+    line-height: 1.5;
+    color: #ffffff;
+    background-color: #505050;
 }
 
-.container {
+.wrapper {
     display: flex;
-    height: 100%;
+    height: 100vh;
 }
 
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
-    width: 100%;
-}
-
-main {
-    flex: 1;
+.main {
+    flex-grow: 1;
     padding: 20px;
+    overflow: auto;
 }
 
-.sidebar {
-    background-color: #f0f0f0;
-    width: 300px; /* largura do painel deslizante */
-    height: 100%;
-    position: fixed;
-    top: 0;
-    right: -300px; /* iniciar o painel fora da tela */
-    overflow-y: auto; /* habilitar rolagem vertical, se necessário */
-    transition: right 0.3s ease; /* transição suave ao mostrar/esconder */
+.side-panel-toggle {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    color: #000000;
+    background-color: #095dbd;
+    border: none;
+    border-radius: 20px 0 0 20px;
+    outline: none;
+    cursor: pointer;
 }
 
-.sidebar.open {
-    right: 0; /* mostrar o painel deslizante */
+.side-panel-toggle:hover {
+    background-color: #004ca3;
 }
 
-.sidebar ul {
-    list-style: none;
-    padding: 0;
+.close {
+    display: none !important;
 }
 
-.sidebar li {
-    padding: 10px;
+.side-panel {
+    display: none;
+    width: flex;
+    max-width: 30vw;
+    flex-shrink: 0;
+    padding: 20px;
+    color: #000000;
+    background: #1182ce;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
 }
 
-.sidebar a {
-    color: #333;
-    text-decoration: none;
+.side-panel-open .side-panel {
+    display: initial;
+}
+
+.side-panel-open .open {
+    display: none !important;
+}
+
+.side-panel-open .close {
+    display: initial !important;
 }
