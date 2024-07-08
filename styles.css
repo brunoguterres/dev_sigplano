@@ -1,0 +1,62 @@
+header {
+    margin: 0;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #000000;
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+#principal {
+    display: flex;
+    flex: 1;
+    height: 85vh;
+}
+
+#map {
+    flex: 1;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+#painel {
+    top: 15vh;
+    right: 0;
+    padding: 5px;
+    max-width: 50vw;
+    height: 85vh;
+    background-color: #ffffff;
+    border-top: 1px solid #000000;
+    border-left: 1px solid #000000;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+#botao-painel {
+    left: -100px;
+    width: 30px;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+#itens-painel {
+    display: flex;
+    flex-direction: column;
+}
+
+.botao-item {
+    background-color: none;
+}

@@ -3,15 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Layout - NEW SIGPLANO</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>WebGIS - TESTE</title>
     <link rel="stylesheet" href="package/ol.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
-    <div id="map"></div>
+    <header>
+        <img src="assets/imagem_header_site.png" alt="imagem de cabeçalho">
+    </header>
+    <div id="principal">
+        <div id="map"></div>
+
+        <aside id="painel">
+            <button id="botao-painel">
+                <span class="material-symbols-outlined">chevron_right</span>
+            </button>
+
+            <nav id="itens-painel">
+                <button>
+                    <i class="material-symbols-outlined">map</i>
+                    <span>Legenda</span>
+                </button>
+
+                <button>
+                    <i class="material-symbols-outlined">stacks</i>
+                    <span>Camadas</span>
+                </button>
+
+                <button>
+                    <i class="material-symbols-outlined">lists</i>
+                    <span>Informações</span>
+                </button>
+
+                <button>
+                    <i class="material-symbols-outlined">manufacturing</i>
+                    <span>Consulta</span>
+                </button>
+            </nav>
+        </aside>
+    </div>
 
     <script src="package/dist/ol.js"></script>
-    <script src="layerswitcher/dist/ol-layerswitcher.js"></script>
     <script src="scripts.js"></script>
 </body>
 </html>
