@@ -16,3 +16,30 @@ var osmTile = new ol.layer.Tile({
 });
 
 map.addLayer(osmTile);
+
+document.addEventListener('DOMContentLoaded', function() {
+    const botoes = document.querySelectorAll('.botao-item');
+
+    botoes.forEach(botao => {
+        botao.addEventListener('click', function() {
+            const target = this.getAttribute('data-target');
+            const janela = document.getElementById(target);
+
+            // Exibe a janela correspondente ao botão clicado
+            if (janela) {
+                janela.style.display = 'block';
+            }
+        });
+    });
+
+    // Fecha a janela quando clicar fora dela
+    document.addEventListener('click', function(event) {
+        if (!event.target.closest('.janela') && !event.target.closest('.botao-item')) {
+            const janelas = document.querySelectorAll('.janela');
+            janelas.forEach(janela => {
+                janela.style.display = 'none';
+            });
+        }
+    });
+});
+
