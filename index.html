@@ -18,28 +18,27 @@
         <aside id="painel">
             <nav id="itens-painel">
                 <button class="botao-item" title="Legenda" data-target="janela-legenda">
-                    <span class="material-symbols-outlined">map</span>
+                    <span class="material-symbols-outlined">format_list_bulleted</span>
                 </button>
 
-                <button class="botao-item" title="Camadas">
+                <button class="botao-item" title="Camadas" data-target="janela-camadas">
                     <span class="material-symbols-outlined">stacks</span>
                 </button>
 
-                <button class="botao-item" title="Informações">
-                    <span class="material-symbols-outlined">lists</span>
+                <button class="botao-item" title="Informações" data-target="janela-informacoes">
+                    <span class="material-symbols-outlined">view_list</span>
                 </button>
 
-                <button class="botao-item" title="Consulta">
+                <button class="botao-item" title="Consulta" data-target="janela-consultas">
                     <span class="material-symbols-outlined">manufacturing</span>
                 </button>
             </nav>
         </aside>
     </div>
 
-    <!--Janelas-->
     <div id="janela-legenda" class="janela">
         <div class="titulo-janela">
-            <span class="material-symbols-outlined">map</span>
+            <span class="material-symbols-outlined">format_list_bulleted</span>
             <span class="texto-titulo-janela">Legenda</span>
         </div>
 
@@ -48,13 +47,86 @@
         </button>
 
         <div class="conteudo-janela">
-            Neste espaço deverá ter os itens da legenda do mapa.
+            Aqui tem o conteúdo de <strong>legenda</strong> do mapa.
+        </div>
+    </div>
 
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam vel earum quisquam vitae culpa dolore repellat, iste cupiditate reiciendis praesentium eos quod officia est eveniet cum repellendus deserunt non consequatur!
-            <br>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum quod error suscipit quasi iure possimus sunt autem reiciendis quas exercitationem ipsam sapiente, similique dignissimos corporis consequuntur at numquam. Quia, deserunt!
-            <br>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, incidunt consectetur modi velit provident corporis illo accusamus saepe fugit quibusdam voluptatem commodi consequuntur porro rem soluta quisquam, culpa fuga aperiam.
+    <div id="janela-camadas" class="janela">
+        <div class="titulo-janela">
+            <span class="material-symbols-outlined">stacks</span>
+            <span class="texto-titulo-janela">Camadas</span>
+        </div>
+
+        <button class="botao-fechar">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+
+        <div class="conteudo-janela">
+            <div class="grupo-legenda">
+                <h1 class="titulo-grupo-legenda">Limites administrativos</h1>
+
+                <ul class="lista-itens-legenda">
+                    <li class="item-legenda">Camada A</li>
+
+                    <li class="item-legenda">Camada B</li>
+
+                    <li class="item-legenda">Camada C</li>
+                </ul>
+            </div>
+
+            <div class="grupo-legenda">
+                <h1 class="titulo-grupo-legenda">Hidrografia</h1>
+
+                <ul class="lista-itens-legenda">
+                    <li class="item-legenda">Camada A</li>
+
+                    <li class="item-legenda">Camada B</li>
+
+                    <li class="item-legenda">Camada C</li>
+                </ul>
+            </div>
+
+            <div class="grupo-legenda">
+                <h1 class="titulo-grupo-legenda">Outorgas</h1>
+
+                <ul class="lista-itens-legenda">
+                    <li class="item-legenda">Camada A</li>
+
+                    <li class="item-legenda">Camada B</li>
+
+                    <li class="item-legenda">Camada C</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="janela-informacoes" class="janela">
+        <div class="titulo-janela">
+            <span class="material-symbols-outlined">view_list</span>
+            <span class="texto-titulo-janela">Informações</span>
+        </div>
+
+        <button class="botao-fechar">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+
+        <div class="conteudo-janela">
+            Aqui tem o conteúdo da janela de <strong>informações</strong>.
+        </div>
+    </div>
+
+    <div id="janela-consultas" class="janela">
+        <div class="titulo-janela">
+            <span class="material-symbols-outlined">manufacturing</span>
+            <span class="texto-titulo-janela">Consultas</span>
+        </div>
+
+        <button class="botao-fechar">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+
+        <div class="conteudo-janela">
+            Aqui tem o conteúdo da janela de <strong>consultas</strong>.
         </div>
     </div>
 
