@@ -18,6 +18,7 @@ var map = new ol.Map({
 // Adicionar camada OpenStreetMap como base
 var osmTile = new ol.layer.Tile({
     source: new ol.source.OSM(),
+    opacity: 0.8,
 });
 
 map.addLayer(osmTile);

@@ -77,13 +77,20 @@
             <div class="grupo-legenda">
                 <h1 class="titulo-grupo-legenda">Hidrografia</h1>
 
-                <ul class="lista-itens-legenda">
-                    <li class="item-legenda">Camada A</li>
+                <div class="checkbox-camada borda">
+                    <input type="checkbox" id="checkboxBaciaRioParaiba" checked>
+                    <label for="checkboxBaciaRioParaiba">Bacia do Rio Paraíba</label>
+                </div>
 
-                    <li class="item-legenda">Camada B</li>
+                <div class="checkbox-camada">
+                    <input type="checkbox" id="checkboxSubBaciaRioParaiba" checked>
+                    <label for="checkboxSubBaciaRioParaiba">Sub bacia do Rio Paraíba</label>
+                </div>
 
-                    <li class="item-legenda">Camada C</li>
-                </ul>
+                <div class="checkbox-camada">
+                    <input type="checkbox" id="checkboxHidrografiaPrincipal" checked>
+                    <label for="checkboxHidrografiaPrincipal">Hidrografia Principal</label>
+                </div>
             </div>
 
             <div class="grupo-legenda">
@@ -131,7 +138,8 @@
     </div>
 
     <script src="package/dist/ol.js"></script>
-    <script src="mapa.js"></script>
     <script src="painel.js"></script>
+    <script src="mapa.js"></script>
+    <script src="camadas.js"></script>
 </body>
 </html>

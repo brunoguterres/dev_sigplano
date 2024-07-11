@@ -159,3 +159,7 @@ body {
     margin: 0;
     padding-bottom: 5px;
 }
+
+.checkbox-camada label {
+    font-size: 12px;
+}
