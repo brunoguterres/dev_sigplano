@@ -101,12 +101,12 @@ body {
 }
 
 .titulo-janela .material-symbols-outlined {
-    color: #303030;
+    color: #000000;
     font-size: 35px;
 }
 
 .texto-titulo-janela {
-    color: #303030;
+    color: #000000;
     font-size: 25px;
     font-family: sans-serif;
     margin-left: 5px;
