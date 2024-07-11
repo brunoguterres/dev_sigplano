@@ -1,8 +1,13 @@
-// Definir a visualização inicial do mapa
+// Definir a extensão em coordenadas geográficas (longitude e latitude)
+var extent = [-36.5, -8.5, -35.5, -6.5];
+
+// Converter a extensão para a projeção do mapa
+var transformedExtent = ol.proj.transformExtent(extent, 'EPSG:4326', 'EPSG:3857');
+
+// Criar a visualização do mapa
 var mapView = new ol.View({
-    center: ol.proj.fromLonLat([-37, -7.6]),
-    zoom: 8,
-});
+    projection: 'EPSG:3857'
+})
 
 // Criar o mapa
 var map = new ol.Map({
@@ -16,3 +21,6 @@ var osmTile = new ol.layer.Tile({
 });
 
 map.addLayer(osmTile);
+
+// Ajustar a visualização para a extensão definida
+mapView.fit(transformedExtent, {size: map.getSize()});
