@@ -169,7 +169,11 @@ body {
     display: flex;
     align-items: center;
 }
+.checkbox-camada input {
+    cursor: pointer;
+}
 
 .checkbox-camada label {
     font-size: 12px;
+    cursor: pointer;
 }
