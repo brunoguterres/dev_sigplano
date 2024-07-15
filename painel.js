@@ -8,6 +8,9 @@ document.addEventListener('DOMContentLoaded', function() {
             janelas.forEach(janela => {
                 janela.style.display = 'none';
             });
+            botoes.forEach(b => {
+                b.querySelector('.material-symbols-outlined').classList.remove('active');
+            });
 
             const target = this.getAttribute('data-target');
             const janela = document.getElementById(target);
@@ -15,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Exibe a janela correspondente ao botão clicado
             if (janela) {
                 janela.style.display = 'block';
+                this.querySelector('.material-symbols-outlined').classList.add('active');
             }
         });
     });
@@ -25,6 +29,13 @@ document.addEventListener('DOMContentLoaded', function() {
         botaoFechar.addEventListener('click', function() {
             const janela = this.closest('.janela');
             janela.style.display = 'none';
+
+            // Remover a classe ativa do botão correspondente
+            const target = janela.id;
+            const botaoCorrespondente = document.querySelector(`.botao-item[data-target="${target}"]`);
+            if (botaoCorrespondente) {
+                botaoCorrespondente.querySelector('.material-symbols-outlined').classList.remove('active');
+            }
         });
     });
 });

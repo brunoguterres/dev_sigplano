@@ -77,6 +77,11 @@ body {
     font-size: 70px;
 }
 
+.botao-item .material-symbols-outlined.active {
+    color: #000000;
+    font-size: 70px;
+}
+
 .janela {
     display: none;
     flex-direction: column  ;
@@ -158,6 +163,11 @@ body {
     font-family: sans-serif;
     margin: 0;
     padding-bottom: 5px;
+}
+
+.checkbox-camada {
+    display: flex;
+    align-items: center;
 }
 
 .checkbox-camada label {
