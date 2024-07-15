@@ -1,6 +1,9 @@
 //Controle de visibilidade de camadas no painel
 document.addEventListener('DOMContentLoaded', function() {
     const layers = {
+        'checkboxDivisaEstadual': divisaEstadual,
+        'checkboxLimitesMunicipais': municipios,
+        'checkboxSedesMunicipais': sedesMunicipais,
         'checkboxBaciaRioParaiba': baciaRioParaiba,
         'checkboxSubBaciaRioParaiba': subBaciaRioParaiba,
         'checkboxHidrografiaPrincipal': hidrografiaPrincipal,
@@ -25,6 +28,39 @@ document.addEventListener('DOMContentLoaded', function() {
 
 //Carregar camadas do Geoserver no mapa
 var url_geoserver = 'https://geoserver.planorioparaiba.com.br/geoserver/prh_rpb/wms';
+
+var divisaEstadual = new ol.layer.Tile({
+    title: 'Divisa Estadual',
+    legendUrl: url_geoserver+'?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&LAYER=prh_rpb:divisa_estadual',
+    source: new ol.source.TileWMS({
+        url: url_geoserver,
+        params: {'LAYERS':'prh_rpb:divisa_estadual', 'TILED': true},
+        serverType: 'geoserver',
+    }),
+    visible: true,
+});
+
+var municipios = new ol.layer.Tile({
+    title: 'Municípios',
+    legendUrl: url_geoserver+'?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&LAYER=prh_rpb:municipios_prh_rpb',
+    source: new ol.source.TileWMS({
+        url: url_geoserver,
+        params: {'LAYERS':'prh_rpb:municipios_prh_rpb', 'TILED': true},
+        serverType: 'geoserver',
+    }),
+    visible: true,
+});
+
+var sedesMunicipais = new ol.layer.Tile({
+    title: 'Sedes Municipais',
+    legendUrl: url_geoserver+'?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&LAYER=prh_rpb:sedes_municipais_prh_rpb',
+    source: new ol.source.TileWMS({
+        url: url_geoserver,
+        params: {'LAYERS':'prh_rpb:sedes_municipais_prh_rpb', 'TILED': true},
+        serverType: 'geoserver',
+    }),
+    visible: false,
+});
 
 var baciaRioParaiba = new ol.layer.Tile({
     title: 'Bacia do Rio Paraíba',
@@ -103,6 +139,8 @@ var pontosAcudesEstrategicos = new ol.layer.Tile({
     visible: false,
 })
 
+map.addLayer(municipios);
+map.addLayer(divisaEstadual);
 map.addLayer(subBaciaRioParaiba);
 map.addLayer(baciaRioParaiba);
 map.addLayer(acudesMonitorados);
@@ -110,6 +148,7 @@ map.addLayer(acudes);
 map.addLayer(hidrografiaPrincipal);
 map.addLayer(pontosAcudesMonitorados);
 map.addLayer(pontosAcudesEstrategicos);
+map.addLayer(sedesMunicipais);
 
 // Adicionar LayerSwitcher
 const layerSwitcher = new LayerSwitcher({
