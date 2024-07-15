@@ -1,34 +1,25 @@
 //Controle de visibilidade de camadas no painel
 document.addEventListener('DOMContentLoaded', function() {
-    const chkBaciaRioParaiba = document.getElementById('checkboxBaciaRioParaiba');
-    const chkSubBaciaRioParaiba = document.getElementById('checkboxSubBaciaRioParaiba');
-    const chkHidrografiaPrincipal = document.getElementById('checkboxHidrografiaPrincipal');
-    const chkAcudes = document.getElementById('checkboxAcudes');
-    const chkAcudesMonitorados = document.getElementById('checkboxAcudesMonitorados');
-    const chkPontosAcudesMonitorados = document.getElementById('checkboxPontosAcudesMonitorados');
-    const chkPontosAcudesEstrategicos = document.getElementById('checkboxPontosAcudesEstrategicos');
+    const layers = {
+        'checkboxBaciaRioParaiba': baciaRioParaiba,
+        'checkboxSubBaciaRioParaiba': subBaciaRioParaiba,
+        'checkboxHidrografiaPrincipal': hidrografiaPrincipal,
+        'checkboxAcudes': acudes,
+        'checkboxAcudesMonitorados': acudesMonitorados,
+        'checkboxPontosAcudesMonitorados': pontosAcudesMonitorados,
+        'checkboxPontosAcudesEstrategicos': pontosAcudesEstrategicos,
+    };
 
-    chkBaciaRioParaiba.addEventListener('change', function() {
-        baciaRioParaiba.setVisible(this.checked);
-    });
-    chkSubBaciaRioParaiba.addEventListener('change', function() {
-        subBaciaRioParaiba.setVisible(this.checked);
-    });
-    chkHidrografiaPrincipal.addEventListener('change', function() {
-        hidrografiaPrincipal.setVisible(this.checked);
-    });
-    chkAcudes.addEventListener('change', function() {
-        acudes.setVisible(this.checked);
-    });
-    chkAcudesMonitorados.addEventListener('change', function() {
-        acudesMonitorados.setVisible(this.checked);
-    });
-    chkPontosAcudesMonitorados.addEventListener('change', function() {
-        pontosAcudesMonitorados.setVisible(this.checked);
-    });
-    chkPontosAcudesEstrategicos.addEventListener('change', function() {
-        pontosAcudesEstrategicos.setVisible(this.checked);
-    });
+    // Inicializar o estado das checkboxes com base na visibilidade das camadas
+    for (const [checkboxId, layer] of Object.entries(layers)) {
+        const checkbox = document.getElementById(checkboxId);
+        if (checkbox) {
+            checkbox.checked = layer.getVisible();
+            checkbox.addEventListener('change', function() {
+                layer.setVisible(this.checked);
+            });
+        }
+    }
 });
 
 
