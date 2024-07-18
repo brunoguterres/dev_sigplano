@@ -91,7 +91,7 @@ body {
     background-color: #ffffff;
     border: 1px solid #000000;
     box-shadow: -5px 5px 10px rgba(0,0,0,0.1);
-    max-width: 25vw;
+    max-width: 50vw;
     max-height: calc(85vh - 20px);
     padding: 5px 15px 5px 5px ;
     font-size: 12px;
@@ -201,4 +201,71 @@ body {
 .checkbox-camada label {
     font-size: 12px;
     cursor: pointer;
+}
+
+@media (max-width: 400px) {
+    #painel {
+        width: 100%;
+        height: auto;
+        bottom: 0;
+        left: 0;
+        padding: 5px;
+        border-top: 1px solid #000000;
+        border-right: none;
+        border-bottom: none;
+        position: fixed;
+        flex-direction: row;
+        justify-content: space-around;
+        background-color: #ffffff;
+        align-items: flex-end;
+    }
+
+    #map {
+        flex: 1;
+        height: calc(100vh - 15vh - 50px);
+        box-sizing: border-box;
+    }
+
+    #itens-painel {
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+        align-items: flex-end;
+    }
+
+    .botao-item .material-symbols-outlined {
+        font-size: 30px;
+    }
+
+    .botao-item .material-symbols-outlined:hover {
+        font-size: 40px;
+    }
+
+    .botao-item .material-symbols-outlined.active {
+        font-size: 40px;
+    }
+
+    .janela {
+        display: none;
+        flex-direction: column  ;
+        position: fixed;
+        top: calc(15vh + 10px);
+        left: 10px;
+        background-color: #ffffff;
+        border: 1px solid #000000;
+        box-shadow: -5px 5px 10px rgba(0,0,0,0.1);
+        max-width: 75vw;
+        max-height: 70vh;
+        padding: 5px 15px 5px 5px ;
+        font-size: 12px;
+        font-family: sans-serif;
+    }
+
+    .conteudo-janela {
+        max-height: 60vh;
+        overflow: auto;
+        padding-right: 10px;
+    }
 }
