@@ -203,6 +203,23 @@ body {
     cursor: pointer;
 }
 
+.legenda-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.legenda-icone {
+    margin-right: 5px;
+    width: 20px; /* Ajuste conforme necessário */
+    height: 20px; /* Ajuste conforme necessário */
+}
+
+.legenda-texto {
+    font-family: sans-serif;
+    font-size: 12px; /* Ajuste conforme necessário */
+}
+
 @media (max-width: 500px) {
     #painel {
         width: 100%;
