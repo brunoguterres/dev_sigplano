@@ -1,12 +1,12 @@
 function atualizarLegenda() {
-    const legendaItens = document.querySelectorAll('.legenda-item');
+    const legendaItens = document.querySelectorAll('.item-legenda');
     legendaItens.forEach(item => {
         const layerName = item.getAttribute('data-layer');
         const layer = window[layerName]; // Acessa a camada pelo nome da variável global
 
         if (layer.getVisible()) {
             const legendaUrl = layer.getSource().getLegendUrl();
-            const imgElement = item.querySelector('.legenda-icone');
+            const imgElement = item.querySelector('.icone-legenda');
             imgElement.src = legendaUrl;
             item.style.display = 'flex'; // Exibe o item da legenda
         } else {

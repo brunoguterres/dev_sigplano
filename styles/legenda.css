@@ -14,18 +14,18 @@
     list-style: none;
 }
 
-.legenda-item {
-    display: none; /* Inicialmente oculto */
+.item-legenda {
+    display: none;
     align-items: center;
 }
 
-.legenda-icone {
+.icone-legenda {
     margin-right: 5px;
     width: 20px;
     height: 20px;
 }
 
-.legenda-texto {
+.texto-legenda {
     font-family: sans-serif;
     font-size: 12px;
 }
