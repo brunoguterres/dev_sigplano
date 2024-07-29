@@ -1,0 +1,22 @@
+.grupo-camada {
+    margin-bottom: 10px;
+}
+
+.titulo-grupo-camada {
+    font-size: 15px;
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.checkbox-camada {
+    display: flex;
+    align-items: center;
+}
+.checkbox-camada input {
+    cursor: pointer;
+}
+
+.checkbox-camada label {
+    font-size: 12px;
+    cursor: pointer;
+}
