@@ -6,6 +6,7 @@
     <title>dev-SIGPLANO | PRH Rio Paraíba</title>
     <link rel="stylesheet" href="package/ol.css">
     <link rel="stylesheet" href="styles/geral.css">
+    <link rel="stylesheet" href="styles/disclaimer.css">
     <link rel="stylesheet" href="styles/painel.css">
     <link rel="stylesheet" href="styles/legenda.css">
     <link rel="stylesheet" href="styles/camadas.css">
@@ -15,6 +16,38 @@
     <header>
         <img src="assets/imagem_header_site.png" alt="imagem de cabeçalho">
     </header>
+
+    <div id="fundo-disclaimer">
+        <div id="janela-disclaimer">
+            <button id="botao-esquerda-disclaimer" class="botao-pagina-disclaimer">
+                <span class="material-symbols-outlined">chevron_left</span>
+            </button>
+
+            <div id="conteudo-disclaimer" class="borda">
+                <div class="pagina-disclaimer" id="pagina-1-disclaimer">
+                    <h1>Bem-vindo ao SIGPLANO | PRH Rio Paraíba</h1>
+                    <p>Esta é uma breve introdução à página.</p>
+                    <img src="assets/intro_image1.png" alt="Imagem da página 1">
+                </div>
+                
+                <div class="pagina-disclaimer" id="pagina-2-disclaimer">
+                    <h1>Sobre o Projeto</h1>
+                    <p>Informações detalhadas sobre o projeto.</p>
+                    <img src="assets/intro_image2.png" alt="Imagem da página 2">
+                </div>
+            </div>
+
+            <button class="botao-fechar-disclaimer">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+
+            <button  id="botao-direita-disclaimer" class="botao-pagina-disclaimer">
+                <span class="material-symbols-outlined">chevron_right</span>
+            </button>
+        </div>
+    </div>
+    
+
     <div id="principal">
         <aside id="painel">
             <nav id="itens-painel">
@@ -220,6 +253,7 @@
     </div>
 
     <script src="package/dist/ol.js"></script>
+    <script src="scripts/disclaimer.js"></script>
     <script src="scripts/painel.js"></script>
     <script src="scripts/mapa.js"></script>
     <script src="scripts/camadas.js"></script>
