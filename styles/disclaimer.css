@@ -119,3 +119,15 @@ body.disclaimer-active header {
 .pagina-disclaimer.active {
     display: block;
 }
+
+@media (max-width: 500px) {
+    #disclaimer {
+        display: none;
+    }
+
+    body.disclaimer-active #principal,
+    body.disclaimer-active header {
+        filter: none;
+        pointer-events: all;
+    }
+}
