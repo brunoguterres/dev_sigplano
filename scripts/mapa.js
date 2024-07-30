@@ -31,3 +31,26 @@ if (window.innerWidth < 500) {
 } else {
     mapView.fit(transformedExtent, {size: map.getSize()});
 }
+
+// Crie o controle de escala
+var scaleLineControl = new ol.control.ScaleLine();
+
+// Função para adicionar/remover a barra de escala
+function updateScaleLine() {
+    var width = window.innerWidth;
+    if (width >= 500) {
+        if (!map.getControls().getArray().includes(scaleLineControl)) {
+            map.addControl(scaleLineControl);
+        }
+    } else {
+        if (map.getControls().getArray().includes(scaleLineControl)) {
+            map.removeControl(scaleLineControl);
+        }
+    }
+}
+
+// Verifique o tamanho da tela ao carregar a página
+updateScaleLine();
+
+// Verifique o tamanho da tela ao redimensionar a janela
+window.addEventListener('resize', updateScaleLine);
