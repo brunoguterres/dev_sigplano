@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     closeButton.addEventListener('click', function() {
-        document.getElementById('fundo-disclaimer').style.display = 'none';
+        document.getElementById('disclaimer').style.display = 'none';
         document.body.classList.remove('disclaimer-active');
     });
 
