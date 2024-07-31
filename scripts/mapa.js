@@ -17,13 +17,54 @@ var map = new ol.Map({
     view: mapView,
 });
 
-// Adicionar camada OpenStreetMap como base
-var osmTile = new ol.layer.Tile({
+// Adicionar camada OpenStreetMap
+var osm = new ol.layer.Tile({
     source: new ol.source.OSM(),
     opacity: 0.8,
 });
 
-map.addLayer(osmTile);
+// Adicionar camada OpenStreetMap
+var satelite = new ol.layer.Tile({
+    source: new ol.source.XYZ({
+        url: 'https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',
+        attributions: '<a href="https://www.google.com/maps/@-7.5,-38.5,562824m/data=!3m1!1e3?authuser=0&entry=ttu">© Google Maps.</a>'
+    }),
+    opacity: 1,
+});
+
+map.addLayer(satelite);
+
+// Função para troca de basemap
+document.addEventListener('DOMContentLoaded', function() {
+    const basemapButton = document.getElementById('botao-basemap');
+    const basemapList = document.getElementById('lista-basemap');
+
+    basemapButton.addEventListener('click', function() {
+        basemapList.style.display = basemapList.style.display === 'none' ? 'block' : 'none';
+    });
+
+    basemapList.addEventListener('click', function(e) {
+        if (e.target.tagName === 'LI') {
+            const selectedBasemap = e.target.getAttribute('data-basemap');
+            // Troque o basemap com base no valor selecionado
+            console.log('Basemap selecionado:', selectedBasemap);
+
+            if (selectedBasemap === 'satelite') {
+                map.getLayers().setAt(0, satelite);
+            } else if (selectedBasemap === 'osm') {
+                map.getLayers().setAt(0, osm);
+            }
+            basemapList.style.display = 'none';
+        }
+    });
+
+    // Fechar a lista ao clicar fora dela
+    document.addEventListener('click', function(e) {
+        if (!basemapButton.contains(e.target) && !basemapList.contains(e.target)) {
+            basemapList.style.display = 'none';
+        }
+    });
+});
 
 // Ajustar a extensão com base na largura da tela
 if (window.innerWidth < 500) {

@@ -36,6 +36,7 @@ var divisaEstadual = new ol.layer.Tile({
         url: url_geoserver,
         params: {'LAYERS':'prh_rpb:divisa_estadual', 'TILED': true},
         serverType: 'geoserver',
+        attributions: '<a href="https://www.ibge.gov.br/geociencias/organizacao-do-territorio/malhas-territoriais/15774-malhas.html">IBGE.</a>'
     }),
     visible: true,
 });
@@ -47,6 +48,7 @@ var municipios = new ol.layer.Tile({
         url: url_geoserver,
         params: {'LAYERS':'prh_rpb:municipios_prh_rpb', 'TILED': true},
         serverType: 'geoserver',
+        attributions: '<a href="https://www.ibge.gov.br/geociencias/organizacao-do-territorio/malhas-territoriais/15774-malhas.html">IBGE.</a>'
     }),
     visible: true,
 });
@@ -58,6 +60,7 @@ var sedesMunicipais = new ol.layer.Tile({
         url: url_geoserver,
         params: {'LAYERS':'prh_rpb:sedes_municipais_prh_rpb', 'TILED': true},
         serverType: 'geoserver',
+        attributions: '<a href="https://www.ibge.gov.br/geociencias/organizacao-do-territorio/estrutura-territorial/27385-localidades.html?edicao=27386&t=downloads">IBGE.</a>'
     }),
     visible: false,
 });
@@ -69,6 +72,7 @@ var baciaRioParaiba = new ol.layer.Tile({
         url: url_geoserver,
         params: {'LAYERS':'prh_rpb:bacia_rpb', 'TILED': true},
         serverType: 'geoserver',
+        attributions: '<a href="http://siegrh.aesa.pb.gov.br:8080/geoserver/web/wicket/bookmarkable/org.geoserver.web.demo.MapPreviewPage?4">AESA.</a>'
     }),
     visible: true,
 });
@@ -80,6 +84,7 @@ var subBaciaRioParaiba = new ol.layer.Tile({
         url: url_geoserver,
         params: {'LAYERS':'prh_rpb:sub_bacias_rpb', 'TILED': true},
         serverType: 'geoserver',
+        attributions: '<a href="http://siegrh.aesa.pb.gov.br:8080/geoserver/web/wicket/bookmarkable/org.geoserver.web.demo.MapPreviewPage?4">AESA.</a>'
     }),
     visible: true,
 });
@@ -91,6 +96,7 @@ var hidrografiaPrincipal = new ol.layer.Tile({
         url: url_geoserver,
         params: {'LAYERS':'prh_rpb:hidrografia_principal', 'TILED':true},
         serverType: 'geoserver',
+        attributions: '<a href="https://metadados.snirh.gov.br/geonetwork/srv/por/catalog.search#/metadata/f7b1fc91-f5bc-4d0d-9f4f-f4e5061e5d8f">ANA.</a>'
     }),
     visible: true,
 })
@@ -102,6 +108,7 @@ var acudesMonitorados = new ol.layer.Tile({
         url: url_geoserver,
         params: {'LAYERS':'prh_rpb:acudes_monitorados_rpb', 'TILED':true},
         serverType: 'geoserver',
+        attributions: '<a href="http://siegrh.aesa.pb.gov.br:8080/geoserver/web/wicket/bookmarkable/org.geoserver.web.demo.MapPreviewPage?4">AESA.</a>'
     }),
     visible: true,
 })
@@ -113,6 +120,7 @@ var pontosAcudesMonitorados = new ol.layer.Tile({
         url: url_geoserver,
         params: {'LAYERS':'loc_acudes_monitorados_rpb', 'TILED':true},
         serverType: 'geoserver',
+        attributions: '<a href="http://siegrh.aesa.pb.gov.br:8080/geoserver/web/wicket/bookmarkable/org.geoserver.web.demo.MapPreviewPage?4">AESA.</a>'
     }),
     visible: false,
 })
@@ -124,6 +132,7 @@ var pontosAcudesEstrategicos = new ol.layer.Tile({
         url: url_geoserver,
         params: {'LAYERS':'loc_acudes_estrategicos_rpb', 'TILED':true},
         serverType: 'geoserver',
+        attributions: '<a href="http://siegrh.aesa.pb.gov.br:8080/geoserver/web/wicket/bookmarkable/org.geoserver.web.demo.MapPreviewPage?4">AESA.</a>'
     }),
     visible: false,
 })
@@ -135,6 +144,7 @@ var ottobacias = new ol.layer.Tile({
         url: url_geoserver,
         params: {'LAYERS':'ottobacias', 'TILED':true},
         serverType: 'geoserver',
+        attributions: '<a href="https://metadados.snirh.gov.br/geonetwork/srv/por/catalog.search#/metadata/f7b1fc91-f5bc-4d0d-9f4f-f4e5061e5d8f">ANA.</a>'
     }),
     visible: false,
 })
