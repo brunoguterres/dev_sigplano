@@ -29,7 +29,7 @@
 
 .botao-pagina-disclaimer {
     background: none;
-    border: none;
+    /*border: none;*/
     margin: 0;
     padding: 0;
     position: absolute;
@@ -99,10 +99,34 @@
     align-items: center;
     width: auto;
     margin: 0 10px 0 10px;
+    width: 100%;
+    height: 100%;
+}
+
+#conteudo-disclaimer h1{
+    display: flex;
+    justify-content: center;
+    font-family: sans-serif;
+    color: #000000;
+    margin: 0;
+    padding: 0;
+}
+
+#conteudo-disclaimer p{
+    display: flex;
+    justify-content: center;
+    font-family: sans-serif;
+    text-align: justify;
+    line-height: 1.5;
+    color: #000000;
+    margin: 10px 0 10px 0;
+    padding: 0;
 }
 
 #conteudo-disclaimer img {
-    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    width: 100%;
     height: auto;
 }
 

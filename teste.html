@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenLayers WMS GetFeatureInfo Example</title>
+    <style>
+        html, body, .map {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .ol-popup {
+            position: absolute;
+            background-color: white;
+            padding: 10px;
+            border: 1px solid black;
+            bottom: 12px;
+            left: -50px;
+            min-width: 280px;
+        }
+        .ol-popup:after, .ol-popup:before {
+            top: 100%;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+        }
+        .ol-popup:after {
+            border-top-color: white;
+            border-width: 10px;
+            left: 48px;
+            margin-left: -10px;
+        }
+        .ol-popup:before {
+            border-top-color: black;
+            border-width: 11px;
+            left: 48px;
+            margin-left: -11px;
+        }
+        .ol-popup-closer {
+            text-decoration: none;
+            position: absolute;
+            top: 2px;
+            right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div id="map" class="map"></div>
+    <div id="popup" class="ol-popup">
+        <a href="#" id="popup-closer" class="ol-popup-closer">✖</a>
+        <div id="popup-content"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/ol@latest/dist/ol.js"></script>
+    <script>
+        // Configurações da camada WMS
+        const wmsUrl = 'http://localhost:8080/geoserver/wms';
+        const layerName = 'topp:states';
+
+        // Inicializa o mapa
+        const map = new ol.Map({
+            target: 'map',
+            layers: [
+                new ol.layer.Tile({
+                    source: new ol.source.OSM()
+                }),
+                new ol.layer.Image({
+                    source: new ol.source.ImageWMS({
+                        url: 'https://geoserver.planorioparaiba.com.br/geoserver/prh_rpb/wms',
+                        params: { 'LAYERS': 'prh_rpb:bacia_rpb', 'TILED': true},
+                        serverType: 'geoserver',
+                    })
+                })
+            ],
+            view: new ol.View({
+                center: ol.proj.fromLonLat([-95.7129, 37.0902]), // Coordenadas centradas nos EUA
+                zoom: 4
+            })
+        });
+
+        // Cria um overlay para o pop-up
+        const container = document.getElementById('popup');
+        const content = document.getElementById('popup-content');
+        const closer = document.getElementById('popup-closer');
+        const overlay = new ol.Overlay({
+            element: container,
+            autoPan: true,
+            autoPanAnimation: {
+                duration: 250
+            }
+        });
+        map.addOverlay(overlay);
+
+        // Evento de fechamento do pop-up
+        closer.onclick = function() {
+            overlay.setPosition(undefined);
+            closer.blur();
+            return false;
+        };
+
+        // Evento de clique no mapa
+        map.on('singleclick', function (event) {
+            const viewResolution = map.getView().getResolution();
+            const url = map.getLayers().item(1).getSource().getFeatureInfoUrl(
+                event.coordinate, viewResolution, 'EPSG:3857',
+                { 'INFO_FORMAT': 'application/json' }
+            );
+
+            if (url) {
+                fetch(url)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.features.length > 0) {
+                            const properties = data.features[0].properties;
+                            content.innerHTML = `<p>${JSON.stringify(properties, null, 2)}</p>`;
+                            overlay.setPosition(event.coordinate);
+                        } else {
+                            content.innerHTML = '<p>No features found</p>';
+                            overlay.setPosition(event.coordinate);
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error fetching feature info:', error);
+                        content.innerHTML = '<p>Error fetching feature info</p>';
+                        overlay.setPosition(event.coordinate);
+                    });
+            }
+        });
+    </script>
+</body>
+</html>
