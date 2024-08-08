@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     let currentPage = 1;
-    const totalPages = 3; // Atualize conforme necessário
+    const totalPages = 7; // Atualize conforme necessário
     const disclaimerPages = document.querySelectorAll('.pagina-disclaimer');
     const prevButton = document.getElementById('botao-esquerda-disclaimer');
     const nextButton = document.getElementById('botao-direita-disclaimer');

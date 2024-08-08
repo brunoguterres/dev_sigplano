@@ -73,6 +73,7 @@ if (window.innerWidth < 500) {
     mapView.fit(transformedExtent, {size: map.getSize()});
 }
 
+
 // Crie o controle de escala
 var scaleLineControl = new ol.control.ScaleLine();
 
